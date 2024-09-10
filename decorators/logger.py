@@ -20,9 +20,9 @@ def log_request(func):
     async def wrapper(*args, **kwargs):
         # Extract the request object from the arguments
         request = kwargs.get("request")
-        if request:
-            # Submit the logging function to the executor
-            executor.submit(log_to_server, request)
+        # if request:
+        #     # Submit the logging function to the executor
+        #     executor.submit(log_to_server, request)
         
         # Call the original function and get the response
         response = await func(*args, **kwargs)
